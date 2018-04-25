@@ -1,0 +1,10 @@
+name: SOTWGracePeriod
+version: ${project.version}
+main: graceperiod.sotwgraceperiod.SOTWGracePeriod
+softdepend: [Factions, LegacyFactions]
+authors: [BrutalFisting]
+description: grace period for the sotw in factions
+commands:
+  grace:
+    description: Manager for SOTW days in faction servers
+    aliases: [sotw]
