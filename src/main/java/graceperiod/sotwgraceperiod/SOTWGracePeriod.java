@@ -20,7 +20,7 @@ public final class SOTWGracePeriod extends JavaPlugin {
     private static SOTWGracePeriod instance;
     private static GracePeriod graceInstance;
     private static FactionsHook factionsHook;
-    private UUIDListener fListener;
+    private FactionsListener fListener;
     private GraceCommand graceCommand;
 
     public static GracePeriod getGraceInstance() {
@@ -104,6 +104,8 @@ public final class SOTWGracePeriod extends JavaPlugin {
 
         if(factionsHook instanceof FactionsUUIDHook)
             fListener = new UUIDListener();
+        if(factionsHook instanceof LegacyFactionsHook)
+            fListener = new LegacyListener();
         if(fListener != null)
             this.getServer().getPluginManager().registerEvents(fListener,this);
     }
